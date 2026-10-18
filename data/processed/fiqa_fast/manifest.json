@@ -1,0 +1,130 @@
+{
+  "artifacts": {
+    "files": {
+      "exclusions": "exclusions.tsv",
+      "test": "test.tsv",
+      "train": "train.tsv",
+      "validation": "validation.tsv"
+    },
+    "sha256": {
+      "exclusions": "2d0d8636a86fcb3ed32aa281ed8358e78ad8573eb9d05c65f17d4a0b88270c12",
+      "test": "1800237096386f2133845a08e09297a0b618aa13a491ed3b57dde6b00be4ecc3",
+      "train": "a0c6c3da36e85acc04233231c5134636c72dc48b88fe5535915e97d25661eb9c",
+      "validation": "771b495ba88b311832e509d4abb051f3aaea95f6a551064c0f28969ed0ab0c68"
+    }
+  },
+  "cleaning": "collapse leading/trailing and repeated whitespace only; retain symbols and numeric text",
+  "configuration": {
+    "dataset": {
+      "name": "BeIR/fiqa",
+      "qrels": {
+        "name": "BeIR/fiqa-qrels",
+        "revision": "252958f",
+        "split_names": {
+          "test": "test",
+          "train": "train",
+          "validation": "validation"
+        }
+      },
+      "revision": "979c07a"
+    },
+    "output_dir": "data/processed/fiqa",
+    "retrieval": {
+      "b": 0.75,
+      "evaluation_top_k": 100,
+      "k1": 1.2,
+      "method": "bm25",
+      "training_depth": 100
+    },
+    "sampling": {
+      "hard_negative_fraction": 0.5,
+      "negatives_per_positive": 4
+    },
+    "seed": 42
+  },
+  "counts": {
+    "corpus_documents": 57600,
+    "duplicate_text_groups": {
+      "corpus": 2,
+      "queries": 0
+    },
+    "examples": {
+      "test": 64754,
+      "train": 70655,
+      "validation": 50000
+    },
+    "exclusions_by_reason": {
+      "document_id_not_found": 38,
+      "duplicate_text_distinct_ids": 2,
+      "empty_text": 38
+    },
+    "qrels": {
+      "test": {
+        "judgments": 1705,
+        "positives": 1705,
+        "queries": 648
+      },
+      "train": {
+        "judgments": 14131,
+        "positives": 14131,
+        "queries": 5498
+      },
+      "validation": {
+        "judgments": 1236,
+        "positives": 1236,
+        "queries": 500
+      }
+    },
+    "queries": 6648,
+    "train_negatives_by_provenance": {
+      "random_unjudged_false_negative_risk": 28262,
+      "retrieved_unjudged_false_negative_risk": 28262
+    }
+  },
+  "dataset": {
+    "corpus_and_queries": "BeIR/fiqa@979c07a",
+    "qrels": "BeIR/fiqa-qrels@252958f"
+  },
+  "dataset_fingerprints": {
+    "corpus": "93618aa5e382c544",
+    "qrels_test": "17fa0ce287240f45",
+    "qrels_train": "45dc3e041ca0b012",
+    "qrels_validation": "cd612c5dbe2cc25a",
+    "queries": "81a330dd7dfb2c16"
+  },
+  "limitations": [
+    "Unjudged pairs are not verified negatives; sampled labels have documented false-negative risk.",
+    "Evaluation candidates are BM25 top-k; qrels positives outside that list are not injected.",
+    "An unjudged evaluation candidate has a blank label and must remain masked in custom metrics."
+  ],
+  "negative_policy": {
+    "easy_source": "uniform random corpus documents not known positive for the query",
+    "evaluation": "retrieved candidate lists are not balanced; unjudged candidate labels are blank",
+    "false_negative_risk": "retrieved or random unjudged documents may be relevant; provenance and is_judged are retained",
+    "hard_negative_fraction": 0.5,
+    "hard_source": "BM25 retrieved candidates not known positive for the query",
+    "positive_definition": "qrels score > 0",
+    "ratio": "1:4 positive:negative target per positive qrel"
+  },
+  "pipeline_variant": {
+    "name": "fast",
+    "query_pool_reuse": true,
+    "random_negative_sampling": "seeded rejection sampling from eligible corpus IDs",
+    "retrieval_top_k": "partial score-cutoff selection with exact document-ID tie resolution",
+    "row_sorting": "stable generation order; DataFrame sort skipped",
+    "text_export": "restored by IDs and written in chunks"
+  },
+  "seed": 42,
+  "software": {
+    "datasets": "5.1.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.12.9",
+    "scikit-learn": "1.9.1"
+  },
+  "split_policy": {
+    "test": "official test",
+    "train": "official train",
+    "validation": "official dev/validation"
+  }
+}

@@ -1,0 +1,36 @@
+# Starter defaults only; model and data revisions must be recorded per experiment.
+seed: 42
+
+model:
+  name: cross-encoder/ms-marco-MiniLM-L6-v2
+  name_or_path: cross-encoder/ms-marco-MiniLM-L6-v2
+  revision: 233902d25c440f23af6f7d6e94d2946bac0bee0a
+  local_dir: checkpoints/ms-marco-MiniLM-L6-v2
+  max_length: 256
+  truncation: only_second
+  padding: false
+  overlong_query_policy: reject
+
+tokenization:
+  input_dir: data/processed/fiqa_fast
+  output_dir: data/tokenized/fiqa_fast_minilm_l6_v2
+  batch_size: 512
+
+dataset:
+  name: BeIR/fiqa
+  split_policy: official
+  # Pin an immutable dataset revision before downloading or training.
+  revision: 979c07a
+
+evaluation:
+  metrics: [ndcg@10, map@10, recall@100]
+  batch_size: 8
+  max_length: 256
+
+training:
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-5
+  epochs: 1
+  max_length: 256
+  seed: 42

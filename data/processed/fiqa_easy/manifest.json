@@ -1,0 +1,86 @@
+{
+  "artifacts": {
+    "files": {
+      "exclusions": "exclusions.tsv",
+      "test": "test.tsv",
+      "train": "train.tsv",
+      "validation": "validation.tsv"
+    },
+    "sha256": {
+      "exclusions": "2d0d8636a86fcb3ed32aa281ed8358e78ad8573eb9d05c65f17d4a0b88270c12",
+      "test": "1800237096386f2133845a08e09297a0b618aa13a491ed3b57dde6b00be4ecc3",
+      "train": "cf7b772828defae5e04084f05cbf2817091f48841e55259c4cf3833683d6548f",
+      "validation": "771b495ba88b311832e509d4abb051f3aaea95f6a551064c0f28969ed0ab0c68"
+    }
+  },
+  "configuration": {
+    "dataset": {
+      "name": "BeIR/fiqa",
+      "qrels": {
+        "name": "BeIR/fiqa-qrels",
+        "revision": "252958f2d646e22cab6d0c72dd3f0d5de6d0655a",
+        "split_names": {
+          "test": "test",
+          "train": "train",
+          "validation": "validation"
+        }
+      },
+      "revision": "979c07a7cb5ccc6ca009792241fa1250b98055dd"
+    },
+    "evaluation_source_dir": "data/processed/fiqa_fast",
+    "output_dir": "data/processed/fiqa_easy",
+    "sampling": {
+      "negatives_per_positive": 4
+    },
+    "seed": 42
+  },
+  "counts": {
+    "examples": {
+      "test": 64754,
+      "train": 70655,
+      "validation": 50000
+    },
+    "exclusions": 78,
+    "train_duplicate_pairs": 0,
+    "train_negatives": 56524,
+    "train_positives": 14131
+  },
+  "dataset": {
+    "corpus_and_queries": "BeIR/fiqa@979c07a",
+    "qrels": "BeIR/fiqa-qrels@252958f"
+  },
+  "dataset_fingerprints": {
+    "corpus": "93618aa5e382c544",
+    "qrels_test": "17fa0ce287240f45",
+    "qrels_train": "45dc3e041ca0b012",
+    "qrels_validation": "cd612c5dbe2cc25a",
+    "queries": "81a330dd7dfb2c16"
+  },
+  "evaluation_source": {
+    "directory": "C:\\Users\\Clive\\Desktop\\fiqa-reranker\\data\\processed\\fiqa_fast",
+    "manifest_sha256": "aea9732b7ef1bbd99c45396885c9b08393fb210d73a143ea519850a2f9c8e917",
+    "policy": "byte-identical copies; original candidate order, labels, ranks, texts and seeds preserved"
+  },
+  "limitations": [
+    "This variant changes both negative source and repeated-pair weighting; differences cannot be attributed to negative source alone.",
+    "Use validation for model selection; repeated test inspection must not guide tuning."
+  ],
+  "negative_policy": {
+    "exclusion": "all known positive document IDs for the query across official qrels",
+    "false_negative_risk": "Random unjudged passages are assumed negative for training; topic difference and irrelevance are not guaranteed.",
+    "hard_negative_fraction": 0.0,
+    "negatives_per_positive": 4,
+    "positive_definition": "official train qrels score > 0",
+    "sampling": "sorted corpus IDs, SHA256-derived per-query NumPy RNG, uniform rejection sampling without replacement"
+  },
+  "pipeline_variant": {
+    "name": "easy_only_v1",
+    "unique_negatives_per_query": true
+  },
+  "seed": 42,
+  "software": {
+    "datasets": "5.1.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  }
+}

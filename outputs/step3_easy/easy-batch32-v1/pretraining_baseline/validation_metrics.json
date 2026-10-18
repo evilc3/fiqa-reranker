@@ -1,0 +1,9 @@
+{
+  "checkpoint": "C:\\Users\\Clive\\Desktop\\fiqa-reranker\\checkpoints\\ms-marco-MiniLM-L6-v2",
+  "k": 10,
+  "mrr@10": 0.4075563492063492,
+  "ndcg@10": 0.3285897982964575,
+  "note": "Measured before any training updates; uses original qrels and the same candidates as epoch validation.",
+  "queries": 500,
+  "split": "validation"
+}

@@ -1,0 +1,13 @@
+# Easy-only training experiment; original evaluation candidates are copied.
+seed: 42
+dataset:
+  name: BeIR/fiqa
+  revision: 979c07a7cb5ccc6ca009792241fa1250b98055dd
+  qrels:
+    name: BeIR/fiqa-qrels
+    revision: 252958f2d646e22cab6d0c72dd3f0d5de6d0655a
+    split_names: {train: train, validation: validation, test: test}
+sampling:
+  negatives_per_positive: 4
+evaluation_source_dir: data/processed/fiqa_fast
+output_dir: data/processed/fiqa_easy

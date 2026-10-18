@@ -1,0 +1,81 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "pair_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "split": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "row_index": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "query_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "doc_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "input_ids": {
+      "feature": {
+        "dtype": "int32",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "attention_mask": {
+      "feature": {
+        "dtype": "int8",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "token_type_ids": {
+      "feature": {
+        "dtype": "int8",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "label": {
+      "dtype": "float32",
+      "_type": "Value"
+    },
+    "is_judged": {
+      "dtype": "int8",
+      "_type": "Value"
+    },
+    "relevance_score": {
+      "dtype": "float32",
+      "_type": "Value"
+    },
+    "negative_provenance": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "candidate_source": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "candidate_rank": {
+      "dtype": "int32",
+      "_type": "Value"
+    },
+    "retrieval_score": {
+      "dtype": "float32",
+      "_type": "Value"
+    },
+    "seed": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}

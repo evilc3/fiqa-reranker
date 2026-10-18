@@ -1,0 +1,22 @@
+{
+  "best_epoch": 2,
+  "best_validation_ndcg@10": 0.35102696616110585,
+  "epochs": [
+    {
+      "epoch": 1,
+      "learning_rate": 1.110943396226415e-05,
+      "train_bce_loss": 0.15871447413266412,
+      "validation_mrr@10": 0.4313547619047619,
+      "validation_ndcg@10": 0.3489723335512184,
+      "validation_queries": 500
+    },
+    {
+      "epoch": 2,
+      "learning_rate": 0.0,
+      "train_bce_loss": 0.09138424949773964,
+      "validation_mrr@10": 0.43085317460317457,
+      "validation_ndcg@10": 0.35102696616110585,
+      "validation_queries": 500
+    }
+  ]
+}

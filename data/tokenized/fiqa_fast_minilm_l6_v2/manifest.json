@@ -1,0 +1,68 @@
+{
+  "model": {
+    "name": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "local_dir": "C:\\Users\\Clive\\Desktop\\fiqa-reranker\\checkpoints\\ms-marco-MiniLM-L6-v2"
+  },
+  "tokenizer": {
+    "max_length": 256,
+    "truncation": "only_second",
+    "padding": false,
+    "padding_side": "right",
+    "special_tokens_added_for_pair": 3,
+    "overlong_query_policy": "reject"
+  },
+  "seed": 42,
+  "input_dir": "C:\\Users\\Clive\\Desktop\\fiqa-reranker\\data\\processed\\fiqa_fast",
+  "output_dir": "C:\\Users\\Clive\\Desktop\\fiqa-reranker\\data\\tokenized\\fiqa_fast_minilm_l6_v2",
+  "splits": {
+    "train": {
+      "input_rows": 70655,
+      "saved_rows": 70655,
+      "rejected_overlong_queries": 0,
+      "passages_truncated": 20401,
+      "passage_truncation_fraction": 0.2887410657419857,
+      "max_observed_sequence_length": 256
+    },
+    "validation": {
+      "input_rows": 50000,
+      "saved_rows": 50000,
+      "rejected_overlong_queries": 0,
+      "passages_truncated": 19029,
+      "passage_truncation_fraction": 0.38058,
+      "max_observed_sequence_length": 256
+    },
+    "test": {
+      "input_rows": 64754,
+      "saved_rows": 64754,
+      "rejected_overlong_queries": 0,
+      "passages_truncated": 24655,
+      "passage_truncation_fraction": 0.38074867961824754,
+      "max_observed_sequence_length": 256
+    }
+  },
+  "exclusions": {
+    "path": "exclusions.jsonl",
+    "rows": 0
+  },
+  "package_versions": {
+    "transformers": "5.20.1",
+    "tokenizers": "0.23.3",
+    "datasets": "5.1.0",
+    "pyarrow": "26.0.0",
+    "pandas": "3.0.6",
+    "torch": "2.9.1+cu126"
+  },
+  "output_sha256": {
+    "exclusions.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test/data-00000-of-00001.arrow": "b1ef13ef822a498c9556fc212f35781e63a15467c6cdcfea18d2dc14da99a2b2",
+    "test/dataset_info.json": "19871bbbe3f831d5a4981518a0ad90242da682b1bc8b6bd2f228ddb1f47f7a83",
+    "test/state.json": "39b9bf269ca741496aa93e4345fae6cb330a88760f246d45c851e2ebdba7949e",
+    "train/data-00000-of-00001.arrow": "9e1b4eacfad2a1e0783eed32fd4a7edc5198e7655f2d37f558398c271389e200",
+    "train/dataset_info.json": "19871bbbe3f831d5a4981518a0ad90242da682b1bc8b6bd2f228ddb1f47f7a83",
+    "train/state.json": "332a01328baa06611abaa53cb09986dbe5e2dcd02db38e908ffa85f4e583e3b0",
+    "validation/data-00000-of-00001.arrow": "cbdaa164a11780ce1f45c0bc693fdc608069cda40a4417485434e0378002bc34",
+    "validation/dataset_info.json": "19871bbbe3f831d5a4981518a0ad90242da682b1bc8b6bd2f228ddb1f47f7a83",
+    "validation/state.json": "7ffc63b7918b40bcc0815519ea5fd4fedef75cfa99a864172b6c2e137a684ef7"
+  }
+}

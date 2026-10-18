@@ -1,0 +1,25 @@
+{
+  "baseline_validation_skipped": false,
+  "best_epoch": 2,
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce GTX 1650",
+  "model": {
+    "local_dir": "checkpoints/ms-marco-MiniLM-L6-v2",
+    "name": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a"
+  },
+  "package_versions": {
+    "datasets": "5.1.0",
+    "pandas": "3.0.6",
+    "torch": "2.9.1+cu126",
+    "transformers": "5.20.1"
+  },
+  "run_name": "easy-batch32-v1",
+  "seed": 42,
+  "test_metrics": {
+    "k": 10,
+    "mrr@10": 0.4124540711346267,
+    "ndcg@10": 0.3369847340394168,
+    "queries": 648
+  }
+}

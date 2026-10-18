@@ -1,0 +1,26 @@
+seed: 42
+
+dataset:
+  name: BeIR/fiqa
+  revision: 979c07a
+  qrels:
+    name: BeIR/fiqa-qrels
+    revision: 252958f
+    # The repository's dev.tsv file is exposed by HF Datasets as validation.
+    split_names:
+      train: train
+      validation: validation
+      test: test
+
+retrieval:
+  method: bm25
+  k1: 1.2
+  b: 0.75
+  training_depth: 100
+  evaluation_top_k: 100
+
+sampling:
+  negatives_per_positive: 4
+  hard_negative_fraction: 0.5
+
+output_dir: data/processed/fiqa

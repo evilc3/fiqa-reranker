@@ -1,0 +1,39 @@
+seed: 42
+device: auto
+model:
+  name: cross-encoder/ms-marco-MiniLM-L6-v2
+  revision: 233902d25c440f23af6f7d6e94d2946bac0bee0a
+  local_dir: checkpoints/ms-marco-MiniLM-L6-v2
+data:
+  tokenized_dir: data/tokenized/fiqa_fast_minilm_l6_v2
+  qrels_dir: data/processed/fiqa_fast
+  qrels:
+    name: BeIR/fiqa-qrels
+    revision: 252958f2d646e22cab6d0c72dd3f0d5de6d0655a
+    split_names:
+      validation: validation
+      test: test
+  splits:
+  - validation
+  - test
+baseline:
+  device: cuda
+  batch_size: 32
+  output_dir: reports/baseline
+training:
+  output_dir: outputs/step3
+  batch_size: 32
+  learning_rate: 2.0e-05
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_epochs: 2
+  patience: 2
+  gradient_clip_norm: 1.0
+  num_workers: 0
+  mixed_precision: true
+  output_logits: true
+  save_every_epoch: true
+  overfit:
+    enabled: false
+    steps: 50
+    learning_rate: 2.0e-05

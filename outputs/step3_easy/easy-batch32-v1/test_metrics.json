@@ -1,0 +1,9 @@
+{
+  "best_epoch": 2,
+  "checkpoint": "best_model",
+  "k": 10,
+  "mrr@10": 0.4124540711346267,
+  "ndcg@10": 0.3369847340394168,
+  "note": "One final test evaluation after validation-based model selection; do not tune using these results.",
+  "queries": 648
+}

@@ -1,0 +1,78 @@
+{
+  "config": {
+    "baseline": {
+      "batch_size": 32,
+      "device": "cuda",
+      "output_dir": "reports/baseline"
+    },
+    "data": {
+      "qrels": {
+        "name": "BeIR/fiqa-qrels",
+        "revision": "252958f2d646e22cab6d0c72dd3f0d5de6d0655a",
+        "split_names": {
+          "test": "test",
+          "validation": "validation"
+        }
+      },
+      "qrels_dir": "data/processed/fiqa_fast",
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "tokenized_dir": "data/tokenized/fiqa_fast_minilm_l6_v2"
+    },
+    "device": "auto",
+    "model": {
+      "local_dir": "checkpoints/ms-marco-MiniLM-L6-v2",
+      "name": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a"
+    },
+    "seed": 42,
+    "training": {
+      "batch_size": 8,
+      "gradient_clip_norm": 1.0,
+      "learning_rate": 2e-05,
+      "max_epochs": 10,
+      "mixed_precision": true,
+      "num_workers": 0,
+      "output_dir": "outputs/step3",
+      "output_logits": true,
+      "overfit": {
+        "enabled": false,
+        "learning_rate": 2e-05,
+        "steps": 50
+      },
+      "patience": 2,
+      "save_every_epoch": true,
+      "warmup_ratio": 0.1,
+      "weight_decay": 0.01
+    }
+  },
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce GTX 1650",
+  "model_path": "C:\\Users\\Clive\\Desktop\\fiqa-reranker\\checkpoints\\ms-marco-MiniLM-L6-v2",
+  "package_versions": {
+    "datasets": "5.1.0",
+    "pandas": "3.0.6",
+    "torch": "2.9.1+cu126",
+    "transformers": "5.20.1"
+  },
+  "splits": {
+    "test": {
+      "k": 10,
+      "mrr@10": 0.3991347001763669,
+      "ndcg@10": 0.32059502214054997,
+      "queries": 648,
+      "rows_scored": 64754,
+      "score_file": "test_scores.tsv"
+    },
+    "validation": {
+      "k": 10,
+      "mrr@10": 0.4075563492063492,
+      "ndcg@10": 0.3285897982964575,
+      "queries": 500,
+      "rows_scored": 50000,
+      "score_file": "validation_scores.tsv"
+    }
+  }
+}
